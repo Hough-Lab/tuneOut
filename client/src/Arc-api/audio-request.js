@@ -14,8 +14,8 @@ const defaultOptions = {
   signature_version: '1',
   data_type:'audio',
   secure: true,
-  access_key: 'a735916ac5e523565ecf5a2d872ac541',
-  access_secret: 'QO3uR9K1GC626FjTLADGvQ7wWYWlzciJEs8VukbU' //! Store in .env file??
+  access_key: '',
+  access_secret: '' //! Stored in .env file
 };
 
 function buildStringToSign(method, uri, accessKey, dataType, signatureVersion, timestamp) {
