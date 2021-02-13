@@ -1,12 +1,7 @@
-// const url = require('url');
-
 const crypto = require('crypto');
-// const request = require('request');
 const axios = require('axios');
 const FormData = require('form-data');
 const fetch = require('node-fetch');
-
-// const FormData = require ('form-data')
 
 const defaultOptions = {
   host: 'identify-eu-west-1.acrcloud.com',
@@ -15,7 +10,7 @@ const defaultOptions = {
   data_type:'audio',
   secure: true,
   access_key: '',
-  access_secret: '' //! Stored in .env file
+  access_secret: ''
 };
 
 function buildStringToSign(method, uri, accessKey, dataType, signatureVersion, timestamp) {
@@ -25,7 +20,6 @@ function buildStringToSign(method, uri, accessKey, dataType, signatureVersion, t
 function sign(signString, accessSecret) {
   return crypto.createHmac('sha1', accessSecret)
     .update(Buffer.from(signString, 'utf-8'))
-
     .digest().toString('base64');
 }
 
@@ -48,8 +42,8 @@ function identify_v2(data, options, cb) {
     signature_version: '1',
     data_type:'audio',
     secure: true,
-    access_key: 'a735916ac5e523565ecf5a2d872ac541',
-    access_secret: 'QO3uR9K1GC626FjTLADGvQ7wWYWlzciJEs8VukbU' //! Store in .env file??
+    access_key: '',
+    access_secret: '',
   };
 
   const signature = sign(stringToSign, options.access_secret);

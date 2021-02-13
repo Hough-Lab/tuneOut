@@ -47,17 +47,6 @@ function toBuffer (stream) {
 }
 
 export default function captureTab (tabId) {
-//~if there is no given tabId as an argument, check if active tab is audible
-  // if (!tabId) {
-  //   chrome.tabs.query({ active: true, audible: false }, tabs => {
-  //     if (tabs.length) {
-  //       return error.noAudibleTab
-  //     } else {
-  //     tabId = tabs.id
-  //     }
-  //   })
-  // }
-  //todo! -- add getId argument into function below
   return new Promise(resolve => {
     chrome.tabCapture.capture({ audio: true }, function(stream) {
       let audio = new Audio();
@@ -69,29 +58,3 @@ export default function captureTab (tabId) {
     })
   })
 }
-
-
-
-
-
-
-
-  //! Unused functions below
-  let currentTabId;
-
-function checkActiveTab(capturedTabs) {
-    if (capturedTabs.some(tab => tab.tabId === currentTabId && tab.status === 'active')) {
-      console.log('tab being captured')
-    }
-
-    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-      currentTabId = tabs[0].id
-    })
-  }
-
-function listAllTabs () {
-  chrome.tabs.query({}, function(tabs) {
-    console.log('tabs', tabs);
-  });
-};
-  // TODO add function which returns tabIDs for  audio playing
