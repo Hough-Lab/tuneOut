@@ -1,4 +1,6 @@
 import React from 'react'
+import Styles from './DiscogsSearch.css'
+
 import discogsIcon from './discogsIcon.svg'
 
 export default function DiscogsSearch({ artist, album }) {

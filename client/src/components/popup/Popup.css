@@ -1,7 +1,24 @@
+
 body {
   background-image: linear-gradient(rgb(255, 202, 239), rgb(233, 233, 233));
-  width: 275px;
-  height: 425px;
+  width: 280px;
+  height: 434px;
+}
+
+.logoContainer {
+  height: 95px;
+}
+
+.mainContainer {
+  height: 434px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-around;
+  height: 48px;
 }
 
 .container {
@@ -9,15 +26,24 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 275px;
-  height: 425px;
+  overflow-y: scroll;
+  height: 300px;
 }
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* .mainContainer::-webkit-scrollbar {
+  display: none;
+} */
 
 
 
 .tuneoutlogo {
   padding: 15px;
-  align-self: center
+  padding-bottom: 0px;
+  align-self: center;
 }
 
 

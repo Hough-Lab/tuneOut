@@ -1,27 +1,36 @@
 
 .button {
-  margin-bottom: 20px;
+  padding-top: 7px;
   position: sticky;
-
   z-index: 10;
   padding :0.5em 3em;
-  border :0.16em solid rgb(233, 233, 233);
+  border :0.12em solid hsl(315, 100%, 96%);
+  border-radius: 25px;
   margin: 0.2 0.3em 0.3em 0;
   box-sizing: border-box;
   text-decoration:none;
   font-family: 'Lucida Console';
-  font-weight:500;
+  font-weight: 500;
   color:#666666;
+  background-color:hsl(315, 100%, 96%);
   text-align:center;
-  transition: all 0.15s;
+  transition: all 0.35s;
   }
 
   .button:hover{
+  transition: 0.35s;
   color:#666666;
   border-color:#838383;
+  background-color:rgb(255, 228, 248);
+  cursor: pointer;
   }
 
   .button:active{
   color:#BBBBBB;
   border-color:#BBBBBB;
   }
+
+ .button:focus {
+  outline: 0 !important;
+}
+

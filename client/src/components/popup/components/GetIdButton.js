@@ -4,15 +4,17 @@ import Styles from './GetIdButton.css'
 import ResponseBox from './ResponseBox.js'
 // import identifyAudio from '../../../Arc-api/audio-request.js'
 
-export default function GetIdButton({ listAllTabs, getId, runLoadingAnimation }) {
+export default function GetIdButton({ listAllTabs, getId, setSongInfo }) {
 
 
 
-function handleClick(event) {
+const handleClick = (e) => {
+  e.preventDefault();
   console.log('button clicked :)')
-  runLoadingAnimation()
+  // setSongInfo([]);
+  // runLoadingAnimation();
   console.log('loading function works')
-  getId()
+  getId();
 }
 
   return (

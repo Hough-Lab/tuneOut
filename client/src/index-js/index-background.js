@@ -1,8 +1,9 @@
-import 'regenerator-runtime/runtime';
 import { defaultOptions, identify_v2 } from '../Arc-api/audio-request.js'
+import 'regenerator-runtime/runtime';
 
 let recorder;
 let streamObject;
+let previousRequest;
 
 const error = {
   noAudibleTab: 'Please select an audible tab',
@@ -46,7 +47,7 @@ function toBuffer (stream) {
   return buffer;
 }
 
-export default function captureTab (tabId) {
+export function captureTab (tabId) {
   return new Promise(resolve => {
     chrome.tabCapture.capture({ audio: true }, function(stream) {
       let audio = new Audio();
@@ -54,7 +55,16 @@ export default function captureTab (tabId) {
       audio.play();
       const data = handleCapture(stream);
       console.log('data', data);
+      previousRequest = data;
       resolve(data);
     })
+  })
+}
+
+export function sendHistory () {
+  console.log('send history invoked background page')
+  console.log('previous response bck', previousRequest)
+  return new Promise(resolve => {
+    resolve(previousRequest);
   })
 }
