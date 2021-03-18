@@ -4,19 +4,15 @@
   "version": "0.1.0",
   "manifest_version": 2,
   "background": {
-    "scripts": [
+    "page":
       "./index-background.js"
-    ]
   },
   "options_page": "./idx-options.html",
   "browser_action": {
     "default_popup": "./idx-popup.html",
-    "default_title": "Open tuneOut"
+    "default_title": "tuneOut"
   },
   "permissions": [
-    "tabs",
-    "<all_urls>",
-    "activeTab",
     "tabCapture",
     "storage"
   ]

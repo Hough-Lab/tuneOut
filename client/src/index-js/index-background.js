@@ -1,5 +1,6 @@
-import { defaultOptions, identify_v2 } from '../Arc-api/audio-request.js'
 import 'regenerator-runtime/runtime';
+import { defaultOptions, identify_v2 } from '../Arc-api/audio-request.js'
+
 
 let recorder;
 let streamObject;
@@ -32,7 +33,6 @@ function uploadStream (stream) {
     toBuffer(stream);
     identify_v2(stream, defaultOptions, function (body, httpResponse, err) {
         if (err) console.log();
-        console.log('test body', body);
         resolve(body);
     })
   })
@@ -54,7 +54,6 @@ export function captureTab (tabId) {
       audio.srcObject = stream;
       audio.play();
       const data = handleCapture(stream);
-      console.log('data', data);
       previousRequest = data;
       resolve(data);
     })
@@ -62,8 +61,6 @@ export function captureTab (tabId) {
 }
 
 export function sendHistory () {
-  console.log('send history invoked background page')
-  console.log('previous response bck', previousRequest)
   return new Promise(resolve => {
     resolve(previousRequest);
   })

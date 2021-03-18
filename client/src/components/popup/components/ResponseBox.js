@@ -54,13 +54,7 @@ export default function ResponseBox({ songInfo, setSongInfo, animation }) {
       )
     }
 
-    console.log('parser', songObj)
-    console.log('typeofparsed', typeof songObj)
-    console.log('songinfo.metadata', songObj.metadata)
-
-
     const id = songObj.metadata.music[0]
-
     const title = id.title
     const artist = id.artists[0].name
     const label = id.label
@@ -100,7 +94,6 @@ export default function ResponseBox({ songInfo, setSongInfo, animation }) {
       </div>
     )
   }
-
 
   //? On popup initialization
   const firstMsg = 'navigate to an audible tab'

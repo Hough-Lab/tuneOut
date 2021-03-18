@@ -10,10 +10,6 @@ export default function GetIdButton({ listAllTabs, getId, setSongInfo }) {
 
 const handleClick = (e) => {
   e.preventDefault();
-  console.log('button clicked :)')
-  // setSongInfo([]);
-  // runLoadingAnimation();
-  console.log('loading function works')
   getId();
 }
 
