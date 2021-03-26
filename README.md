@@ -6,8 +6,7 @@ A Google Chrome extension which identifies music playing in the Chrome browser. 
 
 Along with the release information for the track, tuneOut returns links for the track on YouTube, Discogs and Spotify.
 
-tuneOut will soon be available to download on the Chrome store.
-
+Download tuneOut here: http://bit.ly/tuneOut
 ## **Screenshots**
 
 ![](readmeFiles/tuneOutExample1.png)
